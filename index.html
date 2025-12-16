@@ -3,162 +3,267 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidhik Ayoob | IT Administrator Portfolio</title>
-  <meta name="description" content="Sidhik Ayoob - IT Administrator (Dubai, UAE). Remote IT support, system administration, networking, posters & promo videos." />
+  <meta name="description" content="Professional portfolio of IT Administrator Sidhu Ayoob - Remote IT Support, IT Administration, and more." />
+  <title>Sidhu Ayoob | IT Administrator Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #111; background: #fff; }
-    header { padding: 48px 18px; border-bottom: 1px solid #eee; }
-    .wrap { max-width: 980px; margin: 0 auto; }
-    h1 { margin: 0 0 10px; font-size: 34px; }
-    .subtitle { margin: 0 0 18px; font-size: 16px; color: #444; }
-    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    a.btn { display: inline-block; padding: 10px 14px; border: 1px solid #111; text-decoration: none; color: #111; border-radius: 10px; }
-    a.btn.secondary { border-color: #aaa; color: #222; }
-    section { padding: 28px 18px; border-bottom: 1px solid #f0f0f0; }
-    h2 { margin: 0 0 12px; font-size: 22px; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .card { border: 1px solid #eee; border-radius: 14px; padding: 14px; background: #fff; }
-    .muted { color: #555; }
-    ul { margin: 10px 0 0; padding-left: 18px; }
-    footer { padding: 22px 18px; }
-    .note { font-size: 13px; color: #666; }
-    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
+    /* ---------- Global Styles ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1e1e1e;
+      background-color: #f5f6fa;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      color: #0a2540;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      background: linear-gradient(135deg, #007cf0, #00dfd8);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    .hero h2 {
+      font-weight: 400;
+      font-size: 1.3rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      margin-top: 30px;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      background: white;
+      color: #007cf0;
+      padding: 12px 24px;
+      border-radius: 6px;
+      margin: 0 10px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cta-buttons a:hover {
+      background: rgba(255,255,255,0.8);
+    }
+
+    /* ---------- About Section ---------- */
+    .about {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .about p {
+      font-size: 1.05rem;
+    }
+
+    /* ---------- Services Section ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .service-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card h3 {
+      color: #007cf0;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- Experience ---------- */
+    .experience-item {
+      margin-bottom: 20px;
+    }
+
+    /* ---------- Certifications ---------- */
+    .cert-list li {
+      list-style: none;
+      background: #eaf3ff;
+      margin: 8px 0;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+
+    /* ---------- Portfolio ---------- */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .video-placeholder iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-info {
+      text-align: center;
+    }
+    .contact-info a {
+      color: #007cf0;
+      font-weight: 600;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #0a2540;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- Responsive Adjustments ---------- */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <h1>Sidhik Ayoob</h1>
-      <p class="subtitle"><strong>IT Administrator</strong> | Remote-Ready | Dubai, UAE</p>
-      <p class="muted">
-        10+ years experience (GCC & India) in system administration, networking, infrastructure support, ERP support, documentation, and operations.
-      </p>
-      <div class="btns">
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn secondary" href="#portfolio">View Portfolio</a>
-        <a class="btn secondary" href="#certifications">Certifications</a>
-      </div>
-      <p class="note">Email: <strong>ayoobsidhik@gmail.com</strong> | Phone: <strong>+971 508841263</strong></p>
-    </div>
-  </header>
 
-  <section id="about">
-    <div class="wrap">
-      <h2>About</h2>
-      <p>
-        I am an IT Administrator based in Dubai, experienced in managing day-to-day IT operations, user support, networking equipment, and business-critical systems.
-        I work with a practical, reliable approach—focused on uptime, documentation, and clear communication.
-      </p>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero">
+    <h1>Sidhu Ayoob</h1>
+    <h2>IT Administrator & Remote Support Specialist</h2>
+    <p>Over 10 years of IT experience across GCC and India. Passionate about efficient IT infrastructure, modern cloud tools, and remote collaboration.</p>
+    <div class="cta-buttons">
+      <a href="#portfolio">View Portfolio</a>
+      <a href="#contact">Contact Me</a>
     </div>
   </section>
 
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m an experienced IT Administrator with over 10 years of professional experience in IT infrastructure, system management, and technical support across GCC and India. I’m remote-ready, adaptable, and passionate about delivering seamless IT solutions and creative digital assets for modern businesses.
+    </p>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
   <section id="services">
-    <div class="wrap">
-      <h2>Services</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Remote IT Support</strong>
-          <ul>
-            <li>Troubleshooting (hardware/software/network)</li>
-            <li>Remote assistance & user guidance</li>
-            <li>Documentation & reporting</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>IT Administration</strong>
-          <ul>
-            <li>Infrastructure support & maintenance planning</li>
-            <li>Network devices: routers/switches/firewalls</li>
-            <li>Vendor coordination & asset records</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Digital Support</strong>
-          <ul>
-            <li>Poster designs for offers/events</li>
-            <li>Short promo videos (10–30 sec)</li>
-            <li>Data entry & record management</li>
-          </ul>
-        </div>
-      </div>
-      <p class="note">For Fiverr: I can provide posters and small promo videos along with IT support packages.</p>
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-card"><h3>Remote IT Support</h3><p>Provide fast, reliable remote assistance for technical issues and system maintenance.</p></div>
+      <div class="service-card"><h3>IT Administration</h3><p>Manage and optimize IT systems, networks, and software for business continuity.</p></div>
+      <div class="service-card"><h3>Poster Design</h3><p>Professional posters for promotions, events, and marketing campaigns.</p></div>
+      <div class="service-card"><h3>Small Promo Videos</h3><p>Create engaging short video promos for social media and brand marketing.</p></div>
+      <div class="service-card"><h3>Data Entry & Documentation</h3><p>Accurate and efficient data management and documentation support.</p></div>
     </div>
   </section>
 
+  <!-- ========== EXPERIENCE SECTION ========== -->
   <section id="experience">
-    <div class="wrap">
-      <h2>Experience</h2>
-      <div class="card">
-        <strong>IT Administrator — Smana Group, Dubai</strong><br/>
-        <span class="muted">May 2025 – Present</span>
-        <ul>
-          <li>Manage daily IT operations, troubleshooting, and documentation.</li>
-          <li>Support planning, maintenance schedules, and operational decision-making.</li>
-        </ul>
-      </div>
-      <div style="height:10px"></div>
-      <div class="card">
-        <strong>IT Administrator — MM Group of Companies, Dubai</strong><br/>
-        <span class="muted">Aug 2024 – Apr 2025</span>
-        <ul>
-          <li>Administered IT systems, network support, and end-user services.</li>
-          <li>Maintained records, reports, and audit support documentation.</li>
-        </ul>
-      </div>
-      <p class="note">Older roles in Qatar and India available in resume upon request.</p>
+    <h2>Experience</h2>
+    <div class="experience-item">
+      <h3>Smana Group – Dubai</h3>
+      <p>IT Administrator – Managed infrastructure, provided user support, and implemented network solutions.</p>
+    </div>
+    <div class="experience-item">
+      <h3>MM Group – Dubai</h3>
+      <p>IT Support Specialist – Maintained systems, provided troubleshooting, and enhanced system security.</p>
     </div>
   </section>
 
+  <!-- ========== CERTIFICATIONS SECTION ========== -->
   <section id="certifications">
-    <div class="wrap">
-      <h2>Certifications & Learning</h2>
-      <div class="card">
-        <ul>
-          <li>AWS Cloud Practitioner Essentials — AWS (Nov 2025)</li>
-          <li>Artificial Intelligence in Human Resource Management — Alison (Sep 2025)</li>
-          <li>Introduction to Artificial Intelligence — IBM SkillsBuild (Aug 2025)</li>
-          <li>Inclusive Service Certification — Dubai Way (Jun 2025)</li>
-          <li>Digital Accessibility Certification — Dubai Way (May 2025)</li>
-          <li>Associate Degree — University of the People, USA (Ongoing)</li>
-        </ul>
-      </div>
-    </div>
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      <li>AWS Cloud Practitioner</li>
+      <li>Artificial Intelligence – IBM & Alison</li>
+      <li>Dubai Way Certification</li>
+      <li>University of the People – Ongoing</li>
+    </ul>
   </section>
 
+  <!-- ========== PORTFOLIO SECTION ========== -->
   <section id="portfolio">
-    <div class="wrap">
-      <h2>Portfolio</h2>
-      <p class="muted">
-        Upload your samples here (posters, short promo videos, screenshots). For confidentiality, blur sensitive data.
-      </p>
-      <div class="grid">
-        <div class="card"><strong>Poster Design Samples</strong><p class="muted">Add 6–10 posters (JPG/PNG).</p></div>
-        <div class="card"><strong>Promo Video Samples</strong><p class="muted">Add 3–5 short MP4 videos.</p></div>
-        <div class="card"><strong>IT Work Samples</strong><p class="muted">Add documentation templates, checklists, records.</p></div>
-      </div>
-      <p class="note">Tip: later we can add a separate “Full Portfolio” button linking to a Google Drive folder.</p>
+    <h2>Portfolio</h2>
+    <p>Here are a few of my creative works in posters and promotional videos.</p>
+    <div class="portfolio-grid">
+      <!-- Replace image placeholders with your real images -->
+      <img src="assets/images/poster1.jpg" alt="Poster Design 1">
+      <img src="assets/images/poster2.jpg" alt="Poster Design 2">
+      <img src="assets/images/poster3.jpg" alt="Poster Design 3">
+    </div>
+
+    <div class="portfolio-grid video-placeholder" style="margin-top:30px;">
+      <!-- Replace these YouTube or Google Drive links with your real video links -->
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 1"></iframe>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 2"></iframe>
     </div>
   </section>
 
+  <!-- ========== CONTACT SECTION ========== -->
   <section id="contact">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <div class="card">
-        <p><strong>Email:</strong> ayoobsidhik@gmail.com</p>
-        <p><strong>Phone:</strong> +971 508841263</p>
-        <p class="muted">For work inquiries, please include your project details and timeline.</p>
-      </div>
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:sidhu.ayoob@example.com">sidhu.ayoob@example.com</a></p>
+      <p>Phone: <a href="tel:+971500000000">+971 50 000 0000</a></p>
     </div>
   </section>
 
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <div class="wrap">
-      <p class="note">© <span id="y"></span> Sidhik Ayoob. All rights reserved.</p>
-    </div>
+    <p>© 2025 Sidhu Ayoob. All Rights Reserved.</p>
   </footer>
 
+  <!-- Minimal JavaScript for smooth scrolling (optional) -->
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
+
 </body>
 </html>
