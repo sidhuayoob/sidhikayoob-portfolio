@@ -11,151 +11,205 @@
 
   <style>
     /* ---------- Global Styles ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      color: #1e1e1e;
-      background-color: #f5f6fa;
-      line-height: 1.6;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #111;
+      background: #f4f7fb;
+      line-height: 1.7;
       scroll-behavior: smooth;
     }
-    h1, h2, h3 {
-      color: #0a2540;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
+
+    h1, h2, h3 { color: #0a2540; }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { max-width: 100%; border-radius: 12px; display: block; }
+
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
+    /* Utility */
+    .muted { color: #445; opacity: 0.9; }
+
     /* ---------- Hero Section ---------- */
     .hero {
-      background: linear-gradient(135deg, #007cf0, #00dfd8);
+      background: linear-gradient(135deg, #2563eb, #1e40af);
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      padding: 84px 20px;
       position: relative;
     }
+
     .hero img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid white;
-      margin-bottom: 20px;
+      border: 4px solid rgba(255,255,255,0.95);
+      margin: 0 auto 18px auto;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     }
+
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
     }
+
     .hero h2 {
-      font-weight: 400;
-      font-size: 1.3rem;
+      font-weight: 500;
+      font-size: 1.15rem;
       margin-top: 10px;
-      opacity: 0.9;
+      opacity: 0.95;
+      color: #e9efff;
     }
+
     .hero p {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      max-width: 600px;
+      margin-top: 18px;
+      font-size: 1.05rem;
+      max-width: 720px;
       margin-left: auto;
       margin-right: auto;
+      color: rgba(255,255,255,0.92);
     }
+
     .cta-buttons {
-      margin-top: 30px;
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .cta-buttons a {
+
+    /* Buttons */
+    .btn {
       display: inline-block;
-      background: white;
-      color: #007cf0;
-      padding: 12px 24px;
-      border-radius: 6px;
-      margin: 0 10px;
+      padding: 12px 18px;
+      border-radius: 10px;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
-    .cta-buttons a:hover {
-      background: rgba(255,255,255,0.8);
+
+    .btn.primary {
+      background: #22c55e;
+      color: #fff;
+      border: none;
+    }
+
+    .btn.primary:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary {
+      background: #ffffff;
+      color: #2563eb;
+      border: 1px solid rgba(255,255,255,0.75);
+    }
+
+    .btn.secondary:hover {
+      background: rgba(255,255,255,0.92);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Card look (premium) ---------- */
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.08);
     }
 
     /* ---------- About Section ---------- */
     .about {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-top: -40px; /* pulls up into hero for a premium look */
     }
-    .about p {
-      font-size: 1.05rem;
-    }
+    .about h2 { margin-bottom: 10px; }
+    .about p { font-size: 1.05rem; }
 
     /* ---------- Services Section ---------- */
+    #services h2 { margin-bottom: 10px; }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .service-card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
     }
     .service-card h3 {
-      color: #007cf0;
+      color: #2563eb;
       margin-bottom: 10px;
+      font-size: 1.1rem;
     }
 
     /* ---------- Experience ---------- */
-    .experience-item {
-      margin-bottom: 20px;
-    }
+    #experience h2 { margin-bottom: 10px; }
+    .experience-item { margin-top: 18px; }
+    .experience-item h3 { margin-bottom: 6px; }
+    .experience-item p { color: #334; }
 
     /* ---------- Certifications ---------- */
+    #certifications h2 { margin-bottom: 10px; }
+    .cert-list {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      padding-left: 0;
+    }
     .cert-list li {
       list-style: none;
       background: #eaf3ff;
-      margin: 8px 0;
-      padding: 10px 15px;
-      border-radius: 6px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      font-weight: 500;
     }
 
     /* ---------- Portfolio ---------- */
+    #portfolio h2 { margin-bottom: 10px; }
+    #portfolio p { margin-top: 6px; }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      gap: 16px;
+      margin-top: 24px;
     }
+
+    .portfolio-grid img {
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
     .video-placeholder iframe {
       width: 100%;
-      height: 200px;
-      border-radius: 8px;
+      height: 210px;
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     /* ---------- Contact ---------- */
+    #contact h2 { margin-bottom: 10px; }
     .contact-info {
       text-align: center;
+      margin-top: 18px;
     }
     .contact-info a {
-      color: #007cf0;
-      font-weight: 600;
+      color: #2563eb;
+      font-weight: 700;
     }
 
     /* ---------- Footer ---------- */
@@ -163,73 +217,109 @@
       background: #0a2540;
       color: white;
       text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
+      padding: 18px 10px;
+      font-size: 0.95rem;
+      margin-top: 40px;
     }
 
     /* ---------- Responsive Adjustments ---------- */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+    @media (max-width: 768px) {
+      .hero { padding: 70px 18px; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero h2 { font-size: 1.05rem; }
+      section { padding: 48px 16px; }
+      .about { margin-top: -28px; }
+    }
+
+    @media (max-width: 420px) {
+      .hero img { width: 120px; height: 120px; }
+      .btn { width: 100%; max-width: 280px; text-align: center; }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ========== HERO SECTION ========== -->
   <section class="hero">
-    <!-- Replace with your real photo -->
+    <!-- Replace with your real photo (recommended path: assets/images/profile.jpg) -->
     <img src="assets/assets/images/poster1.jpg" alt="Sidhik Ayoob Photo">
     <h1>Sidhik Ayoob</h1>
     <h2>IT Administrator & Remote Support Specialist</h2>
     <p>Over 10 years of IT experience across GCC and India. Passionate about efficient IT infrastructure, modern cloud tools, and remote collaboration.</p>
+
     <div class="cta-buttons">
-      <a href="#portfolio">View Portfolio</a>
-      <a href="#contact">Contact Me</a>
+      <a class="btn primary" href="#contact">Hire / Contact Me</a>
+      <a class="btn secondary" href="#portfolio">View Portfolio</a>
     </div>
   </section>
 
   <!-- ========== ABOUT SECTION ========== -->
   <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I’m an experienced IT Administrator with over 10 years of professional experience in IT infrastructure, system management, and technical support across GCC and India. I’m remote-ready, adaptable, and passionate about delivering seamless IT solutions and creative digital assets for modern businesses.
-    </p>
+    <div class="card">
+      <h2>About Me</h2>
+      <p class="muted">
+        I’m an experienced IT Administrator with 10+ years of professional experience in IT infrastructure, system management, networking, and technical support across GCC and India. I’m remote-ready, adaptable, and focused on delivering seamless IT solutions and reliable digital support for modern businesses.
+      </p>
+    </div>
   </section>
 
   <!-- ========== SERVICES SECTION ========== -->
   <section id="services">
     <h2>Services</h2>
+    <p class="muted">Clear, reliable support for IT operations and small business digital needs.</p>
+
     <div class="services-grid">
-      <div class="service-card"><h3>Remote IT Support</h3><p>Provide fast, reliable remote assistance for technical issues and system maintenance.</p></div>
-      <div class="service-card"><h3>IT Administration</h3><p>Manage and optimize IT systems, networks, and software for business continuity.</p></div>
-      <div class="service-card"><h3>Poster Design</h3><p>Professional posters for promotions, events, and marketing campaigns.</p></div>
-      <div class="service-card"><h3>Small Promo Videos</h3><p>Create engaging short video promos for social media and brand marketing.</p></div>
-      <div class="service-card"><h3>Data Entry & Documentation</h3><p>Accurate and efficient data management and documentation support.</p></div>
+      <div class="card service-card">
+        <h3>Remote IT Support</h3>
+        <p>Fast, reliable remote assistance for technical issues, troubleshooting, and maintenance.</p>
+      </div>
+
+      <div class="card service-card">
+        <h3>IT Administration</h3>
+        <p>Manage and optimize IT systems, networks, and software for business continuity.</p>
+      </div>
+
+      <div class="card service-card">
+        <h3>Poster Design</h3>
+        <p>Professional posters for promotions, events, and marketing campaigns.</p>
+      </div>
+
+      <div class="card service-card">
+        <h3>Small Promo Videos</h3>
+        <p>Short promotional videos for social media and brand marketing (links or embeds).</p>
+      </div>
+
+      <div class="card service-card">
+        <h3>Data Entry & Documentation</h3>
+        <p>Accurate data management and structured documentation support for operations.</p>
+      </div>
     </div>
   </section>
 
   <!-- ========== EXPERIENCE SECTION ========== -->
   <section id="experience">
     <h2>Experience</h2>
-    <div class="experience-item">
+
+    <div class="card experience-item">
       <h3>Smana Group – Dubai</h3>
-      <p>IT Administrator – Managed infrastructure, provided user support, and implemented network solutions.</p>
+      <p class="muted">IT Administrator – Managed infrastructure, provided user support, and implemented network solutions.</p>
     </div>
-    <div class="experience-item">
+
+    <div class="card experience-item">
       <h3>MM Group – Dubai</h3>
-      <p>IT Support Specialist – Maintained systems, provided troubleshooting, and enhanced system security.</p>
+      <p class="muted">IT Administrator / IT Support – Maintained systems, troubleshooting, and supported security improvements.</p>
     </div>
   </section>
 
   <!-- ========== CERTIFICATIONS SECTION ========== -->
   <section id="certifications">
     <h2>Certifications</h2>
+
     <ul class="cert-list">
-      <li>AWS Cloud Practitioner</li>
-      <li>Artificial Intelligence – IBM & Alison</li>
-      <li>Dubai Way Certification</li>
+      <li>AWS Cloud Practitioner Essentials (AWS)</li>
+      <li>Artificial Intelligence (IBM SkillsBuild & Alison)</li>
+      <li>Inclusive Service + Digital Accessibility (Dubai Way)</li>
       <li>University of the People – Ongoing</li>
     </ul>
   </section>
@@ -237,27 +327,28 @@
   <!-- ========== PORTFOLIO SECTION ========== -->
   <section id="portfolio">
     <h2>Portfolio</h2>
-    <p>Here are a few of my creative works in posters and promotional videos.</p>
+    <p class="muted">A few sample posters and promotional videos. (Replace placeholders with your real files/links.)</p>
+
     <div class="portfolio-grid">
-      <!-- Replace image placeholders with your real images -->
-      <img src="assets/assets/images/poster1.jpg" alt="Poster Design 1">
+      <!-- Make sure these images exist in GitHub: assets/images/poster1.jpg etc -->
+      <img src="assets/images/poster1.jpg" alt="Poster Design 1">
       <img src="assets/images/poster2.jpg" alt="Poster Design 2">
       <img src="assets/images/poster3.jpg" alt="Poster Design 3">
     </div>
 
-    <div class="portfolio-grid video-placeholder" style="margin-top:30px;">
-      <!-- Replace these YouTube or Google Drive links with your real video links -->
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 1"></iframe>
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 2"></iframe>
+    <div class="portfolio-grid video-placeholder" style="margin-top:22px;">
+      <!-- Replace these with your real YouTube unlisted links (recommended) -->
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 1" loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 2" loading="lazy"></iframe>
     </div>
   </section>
 
   <!-- ========== CONTACT SECTION ========== -->
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>Email: <a href="mailto:sidhuayoob@gmail.com">sidhuayoob@gmail.com</a></p>
-      <p>Phone: <a href="tel:+971508841263">+971 508841263</a></p>
+    <div class="card contact-info">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:ayoobsidhik@gmail.com">ayoobsidhik@gmail.com</a></p>
+      <p>Phone: <a href="tel:+971508841263">+971 50884 1263</a></p>
     </div>
   </section>
 
@@ -266,7 +357,7 @@
     <p>© 2025 Sidhik Ayoob. All Rights Reserved.</p>
   </footer>
 
-  <!-- Minimal JavaScript for smooth scrolling (optional) -->
+  <!-- Smooth scrolling JS (optional) -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
