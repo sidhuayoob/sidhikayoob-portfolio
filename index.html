@@ -15,15 +15,15 @@
 
     body {
       font-family: 'Inter', Arial, sans-serif;
-      color: #f5f5f5;
-      background: #0d1117; /* Dark background */
+      color: #111;
+      background: #f4f7fb;
       line-height: 1.7;
       scroll-behavior: smooth;
     }
 
-    h1, h2, h3 { color: #ffffff; }
+    h1, h2, h3 { color: #0a2540; }
 
-    a { text-decoration: none; color: #60a5fa; }
+    a { text-decoration: none; color: inherit; }
 
     img { max-width: 100%; border-radius: 12px; display: block; }
 
@@ -34,7 +34,7 @@
     }
 
     /* Utility */
-    .muted { color: #d1d5db; opacity: 0.9; }
+    .muted { color: #445; opacity: 0.9; }
 
     /* ---------- Hero Section ---------- */
     .hero {
@@ -58,6 +58,7 @@
     .hero h1 {
       font-size: 2.6rem;
       font-weight: 700;
+      color: #fff;
       letter-spacing: -0.5px;
     }
 
@@ -66,7 +67,7 @@
       font-size: 1.15rem;
       margin-top: 10px;
       opacity: 0.95;
-      color: #e0ecff;
+      color: #e9efff;
     }
 
     .hero p {
@@ -98,6 +99,7 @@
     .btn.primary {
       background: #22c55e;
       color: #fff;
+      border: none;
     }
 
     .btn.primary:hover {
@@ -108,30 +110,31 @@
     .btn.secondary {
       background: #ffffff;
       color: #2563eb;
+      border: 1px solid rgba(255,255,255,0.75);
     }
 
     .btn.secondary:hover {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       transform: translateY(-2px);
     }
 
-    /* ---------- Card (Dark Mode) ---------- */
+    /* ---------- Card look (premium) ---------- */
     .card {
-      background: #161b22;
+      background: #fff;
       border-radius: 14px;
       padding: 22px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.6);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.08);
     }
 
     /* ---------- About Section ---------- */
     .about {
-      margin-top: -40px;
+      margin-top: -40px; /* pulls up into hero for a premium look */
     }
     .about h2 { margin-bottom: 10px; }
     .about p { font-size: 1.05rem; }
@@ -145,7 +148,7 @@
       margin-top: 24px;
     }
     .service-card h3 {
-      color: #60a5fa;
+      color: #2563eb;
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
@@ -153,7 +156,8 @@
     /* ---------- Experience ---------- */
     #experience h2 { margin-bottom: 10px; }
     .experience-item { margin-top: 18px; }
-    .experience-item p { color: #d1d5db; }
+    .experience-item h3 { margin-bottom: 6px; }
+    .experience-item p { color: #334; }
 
     /* ---------- Certifications ---------- */
     #certifications h2 { margin-bottom: 10px; }
@@ -166,17 +170,16 @@
     }
     .cert-list li {
       list-style: none;
-      background: #1f2937;
+      background: #eaf3ff;
       padding: 12px 14px;
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(37, 99, 235, 0.15);
       font-weight: 500;
-      color: #f9fafb;
     }
 
     /* ---------- Portfolio ---------- */
     #portfolio h2 { margin-bottom: 10px; }
-    #portfolio p { margin-top: 6px; color: #d1d5db; }
+    #portfolio p { margin-top: 6px; }
 
     .portfolio-grid {
       display: grid;
@@ -187,7 +190,7 @@
 
     .portfolio-grid img {
       border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     .video-placeholder iframe {
@@ -195,7 +198,7 @@
       height: 210px;
       border-radius: 14px;
       border: none;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     /* ---------- Contact ---------- */
@@ -205,13 +208,13 @@
       margin-top: 18px;
     }
     .contact-info a {
-      color: #60a5fa;
+      color: #2563eb;
       font-weight: 700;
     }
 
     /* ---------- Footer ---------- */
     footer {
-      background: #0a0f1a;
+      background: #0a2540;
       color: white;
       text-align: center;
       padding: 18px 10px;
@@ -239,6 +242,7 @@
 
   <!-- ========== HERO SECTION ========== -->
   <section class="hero">
+    <!-- Replace with your real photo (recommended path: assets/assets/images/profile.jpg) -->
     <img src="assets/assets/images/poster1.jpg" alt="Sidhik Ayoob Photo">
     <h1>Sidhik Ayoob</h1>
     <h2>IT Administrator & Remote Support Specialist</h2>
@@ -299,12 +303,12 @@
 
     <div class="card experience-item">
       <h3>Smana Group – Dubai</h3>
-      <p>IT Administrator – Managed infrastructure, provided user support, and implemented network solutions.</p>
+      <p class="muted">IT Administrator – Managed infrastructure, provided user support, and implemented network solutions.</p>
     </div>
 
     <div class="card experience-item">
       <h3>MM Group – Dubai</h3>
-      <p>IT Administrator / IT Support – Maintained systems, troubleshooting, and supported security improvements.</p>
+      <p class="muted">IT Administrator / IT Support – Maintained systems, troubleshooting, and supported security improvements.</p>
     </div>
   </section>
 
@@ -323,15 +327,17 @@
   <!-- ========== PORTFOLIO SECTION ========== -->
   <section id="portfolio">
     <h2>Portfolio</h2>
-    <p class="muted">A few sample posters and promotional videos.</p>
+    <p class="muted">A few sample posters and promotional videos. (Replace placeholders with your real files/links.)</p>
 
     <div class="portfolio-grid">
+      <!-- ✅ GIF file included properly (please rename it to 'poster-design-2.gif' in your repo) -->
       <img src="assets/assets/images/poster-design-2.gif" alt="Animated Poster Design Demo">
       <img src="assets/assets/images/poster2.jpg" alt="Poster Design 3">
       <img src="assets/assets/images/poster3.jpg" alt="Poster Design 4">
     </div>
 
     <div class="portfolio-grid video-placeholder" style="margin-top:22px;">
+      <!-- Replace these with your real YouTube unlisted links -->
       <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 1" loading="lazy"></iframe>
       <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Promo Video 2" loading="lazy"></iframe>
     </div>
@@ -351,7 +357,7 @@
     <p>© 2025 Sidhik Ayoob. All Rights Reserved.</p>
   </footer>
 
-  <!-- Smooth scrolling JS -->
+  <!-- Smooth scrolling JS (optional) -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
