@@ -12,10 +12,11 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* ===== GLOBAL DARK MODE ===== */
     body {
       font-family: 'Inter', Arial, sans-serif;
-      background: #f4f7fb;
-      color: #111;
+      background: #0b0f19;
+      color: #e5e7eb;
       line-height: 1.7;
     }
 
@@ -25,7 +26,18 @@
       padding: 60px 20px;
     }
 
-    h1, h2, h3 { color: #0a2540; }
+    h1, h2, h3 {
+      color: #ffffff;
+    }
+
+    p {
+      color: #d1d5db;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     /* ===== HERO VIDEO SECTION ===== */
     .hero {
@@ -46,8 +58,6 @@
       left: 50%;
       min-width: 100%;
       min-height: 100%;
-      width: auto;
-      height: auto;
       transform: translate(-50%, -50%);
       object-fit: cover;
       z-index: -2;
@@ -57,13 +67,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.65);
       z-index: -1;
     }
 
     .hero-content {
       max-width: 850px;
-      width: 100%;
     }
 
     .profile-pic {
@@ -71,49 +80,44 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.95);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 4px solid rgba(255,255,255,0.9);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
       margin: 0 auto 18px auto;
       display: block;
-      background: rgba(255,255,255,0.15);
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 10px;
-      color: #fff;
-      letter-spacing: -0.5px;
     }
 
     .hero h2 {
       font-size: 1.25rem;
       font-weight: 500;
       margin-bottom: 18px;
-      color: #dbeafe;
-      opacity: 0.98;
+      color: #93c5fd;
     }
 
     .hero p {
       font-size: 1.05rem;
       margin: 0 auto 28px auto;
-      color: #e5e7eb;
       max-width: 720px;
     }
 
+    /* ===== BUTTONS ===== */
     .btn {
       display: inline-block;
       padding: 12px 20px;
       border-radius: 10px;
       font-weight: 600;
-      text-decoration: none;
       margin: 6px;
       transition: all 0.2s ease;
     }
 
     .btn.primary {
       background: #22c55e;
-      color: #fff;
+      color: #022c22;
     }
 
     .btn.primary:hover {
@@ -122,21 +126,22 @@
     }
 
     .btn.secondary {
-      background: #fff;
-      color: #2563eb;
+      background: transparent;
+      color: #93c5fd;
+      border: 1px solid #93c5fd;
     }
 
     .btn.secondary:hover {
-      background: #f1f5f9;
+      background: rgba(147,197,253,0.1);
       transform: translateY(-2px);
     }
 
-    /* ===== CARD STYLE ===== */
+    /* ===== CARDS ===== */
     .card {
-      background: #fff;
+      background: #111827;
       border-radius: 14px;
       padding: 22px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
     /* ===== SERVICES ===== */
@@ -156,44 +161,43 @@
     }
 
     .portfolio-item {
-      background: #fff;
+      background: #111827;
       border-radius: 14px;
       padding: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease;
     }
 
     .portfolio-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.08);
     }
 
     .portfolio-item img {
       width: 100%;
       border-radius: 12px;
-      display: block;
     }
 
     .portfolio-caption {
       margin-top: 10px;
       font-weight: 600;
-      color: #0a2540;
-      font-size: 0.98rem;
+      color: #ffffff;
+      font-size: 0.95rem;
     }
 
+    /* ===== CONTACT ===== */
     .contact-info {
       text-align: center;
     }
 
     footer {
-      background: #0a2540;
-      color: white;
+      background: #020617;
+      color: #9ca3af;
       text-align: center;
       padding: 18px;
       margin-top: 40px;
     }
 
-    /* ===== MOBILE TUNING ===== */
+    /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       .hero { height: 92vh; }
       .hero h1 { font-size: 2.2rem; }
@@ -206,15 +210,13 @@
 
 <body>
 
-<!-- ===== HERO WITH VIDEO (KEEPED) ===== -->
+<!-- ===== HERO WITH VIDEO ===== -->
 <section class="hero">
-  <!-- IMPORTANT: URL-ENCODED video filename (spaces) -->
   <video autoplay muted loop playsinline>
     <source src="assets/assets/videos/website%20vdo%20background.mp4" type="video/mp4">
   </video>
 
   <div class="hero-content">
-    <!-- IMPORTANT: Correct path for your profile picture -->
     <img class="profile-pic" src="assets/assets/images/poster1.jpg" alt="Sidhik Ayoob Profile Photo">
 
     <h1>Sidhik Ayoob</h1>
@@ -231,9 +233,9 @@
   <div class="card">
     <h2>About Me</h2>
     <p>
-      I am an experienced IT Administrator specializing in infrastructure support, system administration,
-      networking, and remote technical assistance. I also provide poster designs, small promotional videos,
-      and documentation support for businesses.
+      Experienced IT Administrator specializing in infrastructure support, system administration,
+      networking, and remote technical assistance. Also providing poster designs, promo videos,
+      and documentation support.
     </p>
   </div>
 </section>
@@ -253,27 +255,18 @@
 <!-- ===== PORTFOLIO ===== -->
 <section id="portfolio">
   <h2>Portfolio</h2>
-  <p style="margin-top:6px; color:#334;">
-    Here are a few sample works (GIF posters / invitation).
-  </p>
+  <p>Sample works (GIF posters / invitation).</p>
 
   <div class="portfolio-grid">
-
-    <!-- IMPORTANT: URL-ENCODE spaces + parentheses safely -->
     <div class="portfolio-item">
-      <img
-        src="assets/assets/images/Thanksgiving%20Invitation%20Video%20%281%29%20%283%29.gif"
-        alt="Thanksgiving Invitation Video GIF">
+      <img src="assets/assets/images/Thanksgiving%20Invitation%20Video%20%281%29%20%283%29.gif" alt="Thanksgiving Invitation">
       <div class="portfolio-caption">Thanksgiving Invitation Video</div>
     </div>
 
     <div class="portfolio-item">
-      <img
-        src="assets/assets/images/poster%20design%202.gif"
-        alt="Poster Design 2 GIF">
+      <img src="assets/assets/images/poster%20design%202.gif" alt="Poster Design">
       <div class="portfolio-caption">Poster Design Sample</div>
     </div>
-
   </div>
 </section>
 
@@ -281,8 +274,8 @@
 <section id="contact">
   <div class="card contact-info">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:sidhuayoob@gmail.com"><strong>sidhuayoob@gmail.com</strong></a></p>
-    <p>Phone: <a href="tel:+971508841263"><strong>+971 508841263</strong></a></p>
+    <p>Email: <strong>sidhuayoob@gmail.com</strong></p>
+    <p>Phone: <strong>+971 508841263</strong></p>
   </div>
 </section>
 
